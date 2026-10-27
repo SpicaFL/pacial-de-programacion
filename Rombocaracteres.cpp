@@ -5,7 +5,6 @@ int main() {
     int n;
     char simbolo;
  
-    // Validación con do-while: se repite mientras n sea par, cero o negativo
     do {
         cout << "Ingrese la altura del rombo (entero impar positivo): ";
         cin >> n;
@@ -17,10 +16,10 @@ int main() {
     cout << "Ingrese el caracter: ";
     cin >> simbolo;
  
-    int centro = n / 2;   // índice de la fila central (empezando en 0)
+    int centro = n / 2;   
  
     for (int fila = 0; fila < n; fila++) {
-        // distancia de la fila actual a la fila central
+     
         int distancia;
         if (fila <= centro) {
             distancia = centro - fila;
