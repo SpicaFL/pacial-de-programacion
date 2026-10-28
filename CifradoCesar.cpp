@@ -19,7 +19,7 @@ int main() {
 
     cout << "Desplazamiento: ";
     cin >> k;
-    cin.ignore(10000, '\n');            // Limpia todo el buffer hasta el salto de línea
+    cin.ignore(10000, '\n');         
 
     cout << "Mensaje: ";
     getline(cin, mensaje);
