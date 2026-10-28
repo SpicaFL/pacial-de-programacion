@@ -8,15 +8,15 @@ int main() {
     cout << "Ingrese una frase: ";
     getline(cin, frase);
  
-    int i = 0;                        // índice que avanza desde el inicio
-    int j = (int)frase.size() - 1;    // índice que retrocede desde el final
+    int i = 0;                      
+    int j = (int)frase.size() - 1;    
     bool esPalindromo = true;
  
     while (i < j) {
         if (!isalnum((unsigned char)frase[i])) {
-            i++;                      // ignora espacios y signos al inicio
+            i++;                     
         } else if (!isalnum((unsigned char)frase[j])) {
-            j--;                      // ignora espacios y signos al final
+            j--;                     
         } else {
             if (tolower(frase[i]) != tolower(frase[j])) {
                 esPalindromo = false;
