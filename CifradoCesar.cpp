@@ -21,7 +21,7 @@ int main() {
     cin >> k;
     cin.ignore(10000, '\n');         
 
-    cout << "Mensaje: ";
+    cout << "Mensa#ije: ";
     getline(cin, mensaje);
 
     if (opcion == 'D') {

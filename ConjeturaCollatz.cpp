@@ -12,7 +12,7 @@ int main() {
     }
  
     int mejorNumero = 1;
-    int mejorPasos = -1;               // -1 para que el primer número siempre quede registrado
+    int mejorPasos = -1;          
     long long mejorMaximo = 1;
  
     for (int inicio = 1; inicio <= N; inicio++) {
@@ -32,7 +32,7 @@ int main() {
             }
         }
  
-        // ">" estricto: en caso de empate se conserva el primero encontrado
+    
         if (pasos > mejorPasos) {
             mejorPasos = pasos;
             mejorNumero = inicio;
