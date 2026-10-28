@@ -19,7 +19,7 @@ int main() {
 
 
     if (opcion == 1) {
-        // ---------- COMPRIMIR ----------
+    
         bool hayDigitos = false;
         for (char c : cadena) {
             if (isdigit((unsigned char)c)) hayDigitos = true;
