@@ -11,21 +11,22 @@ int main() {
     cout << "2. Descomprimir" << endl;
     cout << "Opcion: ";
     cin >> opcion;
-    cin.ignore();                       // Limpia el \n que cin dejó tirado en el buffer como si nada
+    cin.ignore();                      
     cout << "Cadena: ";
     getline(cin, cadena);
 
-    size_t n = cadena.size();           // Usamos size_t para que el compilador deje de llorar por los tipos
+    size_t n = cadena.size();         
+
 
     if (opcion == 1) {
         // ---------- COMPRIMIR ----------
         bool hayDigitos = false;
         for (char c : cadena) {
-            if (isdigit((unsigned char)c)) hayDigitos = true; // Si metieron un número, activamos el pánico
+            if (isdigit((unsigned char)c)) hayDigitos = true;
         }
         if (hayDigitos) {
             cout << "La cadena no debe contener digitos." << endl;
-            return 0;                   // Abortar misión, el usuario no sabe seguir instrucciones
+            return 0;                  
         }
 
         string comprimida = "";
@@ -34,39 +35,39 @@ int main() {
             char actual = cadena[i];
             size_t cuenta = 1;
             while (i + cuenta < n && cadena[i + cuenta] == actual) {
-                cuenta++;               // Contar letras iguales como si tuviéramos infinita paciencia
+                cuenta++;              
             }
             comprimida += actual;
             comprimida += to_string(cuenta);
-            i += cuenta;                // Pegar el salto cuántico para no volver a contar lo mismo
+            i += cuenta;            
         }
         cout << "Comprimida: " << comprimida << endl;
 
     } else if (opcion == 2) {
-        // ---------- DESCOMPRIMIR ----------
+        
         string original = "";
         bool valido = (n > 0);
         size_t i = 0;
 
         while (i < n && valido) {
             char letra = cadena[i];
-            if (isdigit((unsigned char)letra)) {      // Si empieza con un número, todo en esta vida está mal
+            if (isdigit((unsigned char)letra)) {     
                 valido = false;
             } else {
                 i++;
                 if (i >= n || !isdigit((unsigned char)cadena[i])) {
-                    valido = false;                   // Esperaba un número y no hay nada. Exijo un reembolso.
+                    valido = false;                 
                 } else {
                     size_t cantidad = 0;
                     while (i < n && isdigit((unsigned char)cadena[i])) {
-                        cantidad = cantidad * 10 + (cadena[i] - '0');   // Matemáticas oscuras para convertir texto a número
+                        cantidad = cantidad * 10 + (cadena[i] - '0');  
                         i++;
                     }
                     if (cantidad == 0) {
-                        valido = false;               // ¿Repetir 0 veces? Ni para qué empezamos
+                        valido = false;             
                     } else {
                         for (size_t k = 0; k < cantidad; k++) {
-                            original += letra;        // Clavar la misma letra una y otra vez como spammear el teclado
+                            original += letra;       
                         }
                     }
                 }
@@ -80,7 +81,7 @@ int main() {
         }
 
     } else {
-        cout << "Opcion invalida." << endl; // Era elegir entre 1 y 2, tampoco es física de partículas
+        cout << "Opcion invalida." << endl; 
     }
-    return 0; // Cero errores, nos fuimos a dormir
+    return 0;
 }
