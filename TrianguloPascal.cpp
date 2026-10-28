@@ -12,16 +12,16 @@ int main() {
         return 0;
     }
  
-    const int ANCHO = 6;                // ancho de cada número (par, para poder centrar)
+    const int ANCHO = 6;               
  
     for (int fila = 0; fila < n; fila++) {
-        // Espacios iniciales: cada fila baja media celda hacia la izquierda
+        
         cout << setw((n - 1 - fila) * (ANCHO / 2)) << "";
  
-        long long c = 1;                // C(fila, 0) = 1
+        long long c = 1;               
         for (int k = 0; k <= fila; k++) {
             cout << setw(ANCHO) << c;
-            c = c * (fila - k) / (k + 1);   // C(fila, k+1) = C(fila, k) * (fila-k) / (k+1)
+            c = c * (fila - k) / (k + 1);  
         }
         cout << endl;
     }
